@@ -1,0 +1,62 @@
+# --- Identity ---
+id: "b8e4f21a-7c93-4d6e-a1b5-3f9d8e2c0a47"
+name: "webapp-testing-pipeline"
+display_name: "Webapp Testing Pipeline"
+description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
+version: "1.0.0"
+engine: ">=1.0.0"
+
+# --- Attribution ---
+author:
+  name: "skrptiq"
+  url: "https://hub.skrptiq.ai"
+
+licence: "MIT"
+repository: "https://github.com/skrpts/webapp-testing-pipeline"
+
+# --- Discovery (Hub) ---
+category: "developer"
+tags:
+  - "testing"
+  - "webapp"
+  - "automation"
+  - "loops"
+  - "quality-assurance"
+
+# --- Security & Access ---
+requires:
+  services:
+    - "llm-service"
+  permissions:
+    - "filesystem:read"
+    - "filesystem:write"
+    - "shell:execute"
+  data_handling:
+    - "source-code"
+
+# --- Loops ---
+loops:
+  - id: "test-run"
+    mode: "for_each"
+    steps:
+      - "test-writing"
+      - "test-execution"
+    maxIterations: 50
+  - id: "fix-cycle"
+    mode: "until_pass"
+    steps:
+      - "test-writing"
+      - "test-execution"
+      - "fix-verification"
+    verifier: "fix-verification"
+    maxIterations: 5
+    freshContextPerIteration: true
+
+# --- Contents ---
+contents:
+  skills: 5
+  prompts: 5
+  workflows: 1
+  services: 1
+  assets: 1
+  total: 13
