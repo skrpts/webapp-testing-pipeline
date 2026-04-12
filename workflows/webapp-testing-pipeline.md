@@ -23,6 +23,18 @@ metadata:
   estimated_duration: "10-60 minutes"
   trigger: manual
   loop_modes: ["for_each", "until_pass"]
+execution:
+  - skill: "test-planning"
+    step_type: "generation"
+  - skill: "test-writing"
+    step_type: "generation"
+  - skill: "test-execution"
+    step_type: "synthesis"
+    input_from: "test-writing"
+  - skill: "test-reporting"
+    step_type: "synthesis"
+  - skill: "fix-verification"
+    step_type: "validation"
 ---
 
 ## Overview
