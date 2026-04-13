@@ -30,7 +30,6 @@ execution:
     step_type: "generation"
   - skill: "test-execution"
     step_type: "synthesis"
-    input_from: "test-writing"
   - skill: "test-reporting"
     step_type: "synthesis"
   - skill: "fix-verification"
