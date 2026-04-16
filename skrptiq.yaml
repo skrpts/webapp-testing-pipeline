@@ -3,7 +3,7 @@ id: "b8e4f21a-7c93-4d6e-a1b5-3f9d8e2c0a47"
 name: "webapp-testing-pipeline"
 display_name: "Webapp Testing Pipeline"
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
-version: "1.0.3"
+version: "1.0.5"
 engine: ">=1.0.0"
 
 # --- Attribution ---
@@ -34,38 +34,13 @@ requires:
   data_handling:
     - "source-code"
 
-# --- Loops ---
-loops:
-  - id: "test-run"
-    mode: "for_each"
-    steps:
-      - "test-writing"
-      - "test-execution"
-    maxIterations: 50
-  - id: "fix-cycle"
-    mode: "until_pass"
-    steps:
-      - "test-writing"
-      - "test-execution"
-      - "fix-verification"
-    verifier: "fix-verification"
-    maxIterations: 5
-    freshContextPerIteration: true
-
-# --- Output ---
-output_step: "test-reporting"
-composite_steps:
-  - "test-planning"
-  - "test-writing"
-  - "test-execution"
-  - "test-reporting"
-  - "fix-verification"
-
 # --- Contents ---
 contents:
   skills: 5
   prompts: 5
   workflows: 1
   services: 1
+  sources: 0
+  documents: 0
   assets: 1
   total: 13

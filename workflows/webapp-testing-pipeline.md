@@ -23,6 +23,29 @@ metadata:
   estimated_duration: "10-60 minutes"
   trigger: manual
   loop_modes: ["for_each", "until_pass"]
+loops:
+  - id: "test-run"
+    mode: "for_each"
+    steps:
+      - "test-writing"
+      - "test-execution"
+    maxIterations: 50
+  - id: "fix-cycle"
+    mode: "until_pass"
+    steps:
+      - "test-writing"
+      - "test-execution"
+      - "fix-verification"
+    verifier: "fix-verification"
+    maxIterations: 5
+    freshContextPerIteration: true
+output_step: "test-reporting"
+composite_steps:
+  - "test-planning"
+  - "test-writing"
+  - "test-execution"
+  - "test-reporting"
+  - "fix-verification"
 execution:
   - skill: "test-planning"
     step_type: "generation"
