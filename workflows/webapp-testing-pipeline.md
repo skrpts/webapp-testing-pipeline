@@ -48,14 +48,19 @@ composite_steps:
   - "fix-verification"
 execution:
   - skill: "test-planning"
+    prompt: "plan-tests"
     step_type: "generation"
   - skill: "test-writing"
+    prompt: "write-test"
     step_type: "generation"
   - skill: "test-execution"
+    prompt: "execute-test"
     step_type: "synthesis"
   - skill: "test-reporting"
+    prompt: "report-results"
     step_type: "synthesis"
   - skill: "fix-verification"
+    prompt: "verify-fix"
     step_type: "validation"
 ---
 
