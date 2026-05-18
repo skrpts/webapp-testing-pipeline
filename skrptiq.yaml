@@ -3,7 +3,7 @@ id: "b8e4f21a-7c93-4d6e-a1b5-3f9d8e2c0a47"
 name: "webapp-testing-pipeline"
 display_name: "Webapp Testing Pipeline"
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
-version: "1.0.10"
+version: "1.0.11"
 engine: ">=0.1.0"
 
 # --- Attribution ---
