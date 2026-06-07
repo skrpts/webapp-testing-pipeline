@@ -1,9 +1,9 @@
 # --- Identity ---
-id: "b8e4f21a-7c93-4d6e-a1b5-3f9d8e2c0a47"
+id: "41ed5303-43dd-4375-bfc0-4942de63da5e"
 name: "webapp-testing-pipeline"
 display_name: "Webapp Testing Pipeline"
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
-version: "1.0.17"
+version: "1.0.18"
 engine: ">=0.1.0"
 
 # --- Attribution ---
