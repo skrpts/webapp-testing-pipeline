@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.0.17
+GH#645 Row 3b — migrate to K-037 dep-referenced schema. Strip 4 inline shared-content files and declare 3 hub-shared deps (UUID id + slug name + version + checksum from `gen-dep-checksums.mjs`). Internal slug references rewritten for E2 rename/mirror-drop pair(s): test-planning→plan-dev-tests, test-execution→run-test, plan-tests→plan-dev-tests. Closes pre-Step-3 inline-vendoring for this bundle.
+
 ## v1.0.16
 Wave 2: re-signed with canonical engine signing pipeline.
 

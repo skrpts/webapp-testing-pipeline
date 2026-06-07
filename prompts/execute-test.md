@@ -18,7 +18,7 @@ inputs:
     required: true
     type: text
 connections:
-  - target: test-execution
+  - target: run-test
     type: derived_from
 metadata:
   output_format: json

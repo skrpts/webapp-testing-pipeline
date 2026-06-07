@@ -5,11 +5,11 @@ title: Webapp Testing Pipeline
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
 tags: [Production, Customer-Facing, Developer, Loop]
 connections:
-  - target: test-planning
+  - target: plan-dev-tests
     type: uses
   - target: test-writing
     type: uses
-  - target: test-execution
+  - target: run-test
     type: uses
   - target: test-reporting
     type: uses
@@ -29,32 +29,32 @@ loops:
     inputExpression: "{{steps.Test Planning.output}}"
     steps:
       - "test-writing"
-      - "test-execution"
+      - "run-test"
     maxIterations: 50
   - id: "fix-cycle"
     mode: "until_pass"
     steps:
       - "test-writing"
-      - "test-execution"
+      - "run-test"
       - "fix-verification"
     verifier: "fix-verification"
     maxIterations: 5
     freshContextPerIteration: true
 output_step: "test-reporting"
 composite_steps:
-  - "test-planning"
+  - "plan-dev-tests"
   - "test-writing"
-  - "test-execution"
+  - "run-test"
   - "test-reporting"
   - "fix-verification"
 execution:
-  - skill: "test-planning"
-    prompt: "plan-tests"
+  - skill: "plan-dev-tests"
+    prompt: "plan-dev-tests"
     step_type: "generation"
   - skill: "test-writing"
     prompt: "write-test"
     step_type: "generation"
-  - skill: "test-execution"
+  - skill: "run-test"
     prompt: "execute-test"
     step_type: "synthesis"
   - skill: "test-reporting"
