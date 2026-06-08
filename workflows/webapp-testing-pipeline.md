@@ -26,7 +26,7 @@ metadata:
 loops:
   - id: "test-run"
     mode: "for_each"
-    inputExpression: "{{steps.Test Planning.output}}"
+    inputExpression: "{{steps.Plan Tests.output}}"
     steps:
       - "test-writing"
       - "run-test"

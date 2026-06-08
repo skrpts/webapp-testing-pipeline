@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.0.19
+GH#655 audit fix — rewrites `{{steps.Test Planning.output}}` → `{{steps.Plan Tests.output}}` in the workflow's `inputExpression` for the for-each loop. The `test-planning` slug was mirror-dropped to `plan-dev-tests` (title "Plan Tests") in Step 2; the Row 3b helper rewrote slug refs but missed display-name uses in this consumer. Engine validator would not have caught this (loop's inputExpression is runtime-substituted, not statically validated against priorTitles).
+
 ## v1.0.18
 Fix-forward after Row 3b v1.0.17 publish failure. The v1.0.17 per-skrpt CI's "Register version with Hub API" step failed because the consumer's source `manifest.id` (b8e4f21a…) did not match the D1 catalogue row's id (41ed5303…) — a legacy drift from before Action 6 (`0bcc5ae0`) made publish-skrpt.mjs Step 2 INSERT use `manifest.id` for the D1 id column. v1.0.18 reconciles the source `manifest.id` to the catalogue authoritative value (Row-5-equivalent for consumers) and republishes. Per Adj-1: no re-tag of v1.0.17; the orphaned GitHub release artefact stays inert (no D1 versions row, no consumer pinned it).
 
