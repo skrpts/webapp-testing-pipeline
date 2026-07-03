@@ -3,7 +3,7 @@ id: "41ed5303-43dd-4375-bfc0-4942de63da5e"
 name: "webapp-testing-pipeline"
 display_name: "Webapp Testing Pipeline"
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
-version: "1.0.19"
+version: "1.0.20"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -58,3 +58,17 @@ contents:
   documents: 0
   assets: 1
   total: 9
+
+security:
+  status: "pass"
+  scanned_at: "2026-07-03T11:12:01.072Z"
+  scanner_version: "3.3.0"
+  syntactic: "pass"
+  structural: "pass"
+  detected:
+    services: ["llm-service"]
+    permissions: []
+    data_handling: []
+  undeclared: []
+  warnings: []
+  report_url: "https://hub.skrptiq.ai/skrpts/webapp-testing-pipeline/security"

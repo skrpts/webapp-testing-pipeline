@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.0.20
+GH#745 — declare per-step `output: {name, type}` on every execution step (test_plan/text, tests/text, test_output/text, test_report/text, fix_verdict/decision). Lights up the #744 rich flow-map. Content-only; no bindings or logic changes.
+
 ## v1.0.19
 GH#655 audit fix — rewrites `{{steps.Test Planning.output}}` → `{{steps.Plan Tests.output}}` in the workflow's `inputExpression` for the for-each loop. The `test-planning` slug was mirror-dropped to `plan-dev-tests` (title "Plan Tests") in Step 2; the Row 3b helper rewrote slug refs but missed display-name uses in this consumer. Engine validator would not have caught this (loop's inputExpression is runtime-substituted, not statically validated against priorTitles).
 

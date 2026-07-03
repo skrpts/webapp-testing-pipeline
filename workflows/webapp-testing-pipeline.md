@@ -51,18 +51,23 @@ execution:
   - skill: "plan-dev-tests"
     prompt: "plan-dev-tests"
     step_type: "generation"
+    output: { name: "test_plan", type: "text" }
   - skill: "test-writing"
     prompt: "write-test"
     step_type: "generation"
+    output: { name: "tests", type: "text" }
   - skill: "run-test"
     prompt: "execute-test"
     step_type: "synthesis"
+    output: { name: "test_output", type: "text" }
   - skill: "test-reporting"
     prompt: "report-results"
     step_type: "synthesis"
+    output: { name: "test_report", type: "text" }
   - skill: "fix-verification"
     prompt: "verify-fix"
     step_type: "validation"
+    output: { name: "fix_verdict", type: "decision" }
 ---
 
 ## Overview
