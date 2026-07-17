@@ -11,7 +11,7 @@ connections:
 
 ## Capability
 
-Takes the full set of test results from the test execution loop and produces a comprehensive test report. Groups results by status and category, analyses failure patterns, and prioritises issues by severity and user impact.
+Takes the full set of test results from the test execution loop and produces a comprehensive test report. Groups results by status and category, analyzes failure patterns, and prioritizes issues by severity and user impact.
 
 ## When to Use
 

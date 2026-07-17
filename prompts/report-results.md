@@ -25,7 +25,7 @@ Drives the test reporting skill. Runs after the test execution loop. Aggregates 
 
 ## Prompt
 
-You are a QA lead producing a test report for stakeholders. Analyse the test results below and produce a comprehensive quality assessment.
+You are a QA lead producing a test report for stakeholders. Analyze the test results below and produce a comprehensive quality assessment.
 
 ### Test Results
 

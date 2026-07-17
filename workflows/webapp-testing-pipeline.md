@@ -48,8 +48,7 @@ composite_steps:
   - "test-reporting"
   - "fix-verification"
 execution:
-  - skill: "plan-dev-tests"
-    prompt: "plan-dev-tests"
+  - prompt: "plan-dev-tests"
     step_type: "generation"
     output: { name: "test_plan", type: "text" }
   - skill: "test-writing"
@@ -72,7 +71,7 @@ execution:
 
 ## Overview
 
-This workflow automates webapp testing through a structured pipeline. It analyses your application, generates a test plan, writes and executes each test case individually, produces a severity-ranked quality report, and optionally enters a fix cycle for failing tests.
+This workflow automates webapp testing through a structured pipeline. It analyzes your application, generates a test plan, writes and executes each test case individually, produces a severity-ranked quality report, and optionally enters a fix cycle for failing tests.
 
 The pipeline demonstrates both loop modes: **for_each** iterates over test cases (write + execute per case), and **until_pass** drives the fix-verify cycle for failures.
 
@@ -82,7 +81,7 @@ The pipeline demonstrates both loop modes: **for_each** iterates over test cases
 
 The test planning step examines your application and produces a structured test plan — a JSON array of test cases. Each case has an ID, title, category, priority, preconditions, steps, and expected result.
 
-The plan covers critical user flows first, then edge cases and error handling. Test cases are categorised (unit, integration, e2e, accessibility, performance) and prioritised (critical, high, medium, low).
+The plan covers critical user flows first, then edge cases and error handling. Test cases are categorized (unit, integration, e2e, accessibility, performance) and prioritized (critical, high, medium, low).
 
 ### Stage 2: Test Execution Loop (for_each over test cases)
 
@@ -145,7 +144,7 @@ Maximum 5 fix attempts per failure.
 
 ## Provider Notes
 
-- Test planning works well with any model — it's analysing code structure, not writing complex logic
+- Test planning works well with any model — it's analyzing code structure, not writing complex logic
 - Test writing benefits from stronger models (Opus/Sonnet) for accurate assertions
 - Each test case in the for_each loop runs 2 AI calls (write + execute). 20 test cases = 40 calls plus planning and reporting
 - The fix cycle adds 2-3 calls per attempt, up to 5 attempts per failure

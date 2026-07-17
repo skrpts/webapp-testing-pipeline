@@ -2,7 +2,7 @@
 type: asset
 id: test-plan-template
 title: Test Plan Template
-description: "Structured template for organising test cases by category and priority"
+description: "Structured template for organizing test cases by category and priority"
 tags: [Production, Developer, Quality]
 connections: []
 metadata:

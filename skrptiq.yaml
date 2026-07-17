@@ -3,7 +3,7 @@ id: "41ed5303-43dd-4375-bfc0-4942de63da5e"
 name: "webapp-testing-pipeline"
 display_name: "Webapp Testing Pipeline"
 description: "Plan test cases, write and execute tests, report failures, and fix issues in an automated cycle"
-version: "1.0.20"
+version: "1.0.21"
 engine: ">=0.1.0"
 
 # --- Attribution ---
@@ -27,16 +27,16 @@ tags:
 dependencies:
   - id: "fcab9536-a13e-49c9-b0c3-bb3097682e69"
     name: "llm-service"
-    version: 1.0.1
-    checksum: "sha256:455c8bf590a9426d830bffd1a741afa058149bc29c58186c34d0d8699bea4bda"
+    version: 1.0.3
+    checksum: "sha256:18783015383c041de9c3fdaa191b79172ab534348448c20c74f9a967ab4dd917"
   - id: "78246df2-0a7a-41c4-b571-2edf2944f6f3"
     name: "plan-dev-tests"
-    version: 1.0.2
-    checksum: "sha256:f4d61a57d14e451c71863d8475eebe1284a472993fb20495e913c73097e7f951"
+    version: 1.0.4
+    checksum: "sha256:d569f088422634df33490822d64aafe234769b1cfa089382006d406b6548844c"
   - id: "d6443390-e355-43a7-a5d2-e40e78dbd96a"
     name: "run-test"
-    version: 1.0.1
-    checksum: "sha256:5b4f0e044679013045f65ce097180061098e6672ccc9389720a6ae486fc67de2"
+    version: 1.0.3
+    checksum: "sha256:8df0913b5a995349f5fa143ca271d94f09ca0ccd1c4fa87a7f2baa890454d0ce"
 
 requires:
   services:
@@ -61,7 +61,7 @@ contents:
 
 security:
   status: "pass"
-  scanned_at: "2026-07-03T16:03:53.711Z"
+  scanned_at: "2026-07-17T20:21:41.355Z"
   scanner_version: "3.3.0"
   syntactic: "pass"
   structural: "pass"
